@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    overflow-x: hidden;
+    overflow: visible;
+}
+
+nav {
+    background-color: black;
+}
+
+.clear {
+    clear: both;
+}
+
+ul a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    margin: auto;
+    display: block;
+    background: #FA394A;
+    transition: all .5s;
+
+
+}
+
+ul a:hover::after {
+    width: 100%;
+
+}
+
+form{
+    width: 40%;
+    margin: auto;
+
+}
+.container{
+    margin-top: 5%;
+}
