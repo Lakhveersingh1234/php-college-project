@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    
 }
 
 body,
@@ -72,14 +73,10 @@ nav i {
 
 /* TABLE */
 
-.table {
-    margin-top: 6%;
-}
 
 .Refresh a {
    
-     background-color: #dc3545;
-     
+    background-color: #dc3545;
     width: 14%;
     display: flex;
     align-items: center;
@@ -102,10 +99,7 @@ nav i {
 /* FOOTER */
 .footers {
     width: 100%;
-    margin-top: 6%;
     background-color: #45526e;
-
-
 }
 
 .footerow {
@@ -198,7 +192,10 @@ nav i {
 
 @media (min-width: 0px) and (max-width:576px) {
 
-    
+    .sidebar {
+        background-color: rgb(225, 225, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }    
 
     /* FOOTER */
 
@@ -235,7 +232,10 @@ nav i {
 @media (min-width: 577px) and (max-width:768px) {
 
 
-
+    .sidebar {
+        background-color: rgb(225, 225, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
 
     /* FOOTER */
 
@@ -270,7 +270,10 @@ nav i {
 @media (min-width: 769px) and (max-width:992px) {
 
     
-
+    .sidebar {
+        background-color: rgb(225, 225, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
 
     /* FOOTER */
 
@@ -284,7 +287,10 @@ nav i {
 /* TABLETS */
 
 @media (min-width: 993px) and (max-width:1200px) {
-
+    .sidebar {
+        background-color: rgb(225, 225, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
 
     /* FOOTER */
     .link {
