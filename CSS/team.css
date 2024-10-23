@@ -599,7 +599,7 @@ h1 {
 
 /*DESKTOPS */
 
-@media(min-width:1200px) {
+@media(min-width:1200px) and (max-width:1800px){
 
     .section3 {
         width: 80%;
@@ -614,5 +614,18 @@ h1 {
 
         padding: 20PX;
 
+    }
+}
+
+@media (min-width:1801px){
+    .section4 img {
+      
+        height: 350px;
+    
+    }
+    .section3 img {
+      
+        height: 350px;
+    
     }
 }

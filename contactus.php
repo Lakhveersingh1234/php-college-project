@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
                                     <a class="dropdown-item" href="result.Php">Result</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="resultupdate.php">Result Update</a>
+                                    <a class="dropdown-item" href="login.php">Result Update</a>
                                 </li>
                             </ul>
                         </li>

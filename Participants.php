@@ -1,14 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "lakhi";
+include("config/database.php");
 
-$Conn = new mysqli($servername, $username, $password, $dbname);
 if (isset($_POST['submit'])) {
   extract($_POST);
   $date = date("y-m-d");
-  $data = "INSERT INTO resultupdate(name,email,crn,urn,departmentname,semester,created_at,eventname) value('$name','$email','$crn','$urn','$departmentname','$semester','$date','$eventname')";
+  $data = "INSERT INTO experttalk(name,email,crn,urn,department,semester,created_at,event) value('$name','$email','$crn','$urn','$departmentname','$semester','$date','$eventname')";
   $run = $Conn->query($data);
   if ($run) {
     echo "Data Enter Sucessfully";
@@ -62,85 +58,92 @@ if (isset($_POST['submit'])) {
 
   <!-- NAVBAR -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark ">
-    <div class="container-fluid">
-      <a class="navbar-brand fs-4" href="#">
-        <img src="img/logo.jpeg" width="80" height="80" alt="">
-        Computonics Club
-      </a>
-      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <section>
+        <nav class="navbar  navbar-expand-lg navbar-dark ">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-4" href="#">
+                    <img src="img/logo.jpeg" width="80" height="80" alt="">
+                    Computonics Club
+                </a>
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- slidebar -->
+                <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header text-white border-bottom">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Computonics</h5>
+                        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    About Us <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="about.html">Club Overview</a></li>
+                                    <li><a class="dropdown-item" href="team.html">Meet The Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active " href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Event<i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="event celender.html">Event Calender</a></li>
+                                    <li><a class="dropdown-item" href="past event.html">Past Event</a></li>
+                                </ul>
+                            </li>
+                           
+                            <li class="nav-item dropdown">
+                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Participants Data<i class="fa-solid fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="participantupdate.php">Data Update</a></li>
+                  <li><a class="dropdown-item" href="participantsdata.php">Participants Data</a></li>
+                </ul>
+              </li>
+                           
+                           
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " href="gallery.html">Gallery</a>
+                            </li>
+                           
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false ">
+                                    Join Us<i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="member benifit.html">Member Benifits</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" href="contactus.php">Contact Us</a>
+                            </li>
 
-      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header text-white border-bottom">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Computonics</h5>
-          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
-            <li class="nav-item mx-2">
-              <a class="nav-link " aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                About Us <i class="fa-solid fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about.html">Club Overview</a></li>
-                <li><a class="dropdown-item" href="team.html">Meet The Team</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Event<i class="fa-solid fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="event celender.html">Event Calender</a></li>
-                <li><a class="dropdown-item" href="past event.html">Past Event</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Result<i class="fa-solid fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="result.php">Result</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="login.php">Result Update</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Join Us<i class="fa-solid fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="member benifit.html">Member Benifits</a></li>
-              </ul>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="contactus.php">Contact Us</a>
-            </li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="clear"></div>
+    </section>
 
   <!-- SECTON2 -->
 
   <section class="section2">
     <div class="backgroundimg">
-      <h2>Update Result</h2>
+      <h2>Update Exparttalk Participant Data</h2>
     </div>
     <div class="clear"></div>
   </section>
@@ -149,7 +152,7 @@ if (isset($_POST['submit'])) {
  
 
   <div class="forms">
-    <form action="resultupdate.php" method="post">
+    <form action="Participants.php" method="post">
       <div class="mb-3">
         <label for="name" class="form-label">Enter Student Name:*</label>
         <input type="text" class="form-control" id="text" placeholder="Name" name="name" required>

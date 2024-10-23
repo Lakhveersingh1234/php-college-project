@@ -2,11 +2,11 @@
 include("config/database.php");
 if(isset($_GET['id'])){
     extract($_GET);
-    $sqll="delete from resultupdate where id=".$id;
+    $sqll="delete from experttalk where id=".$id;
     $Conn->query($sqll);
   }
 
-$sql="select * from resultupdate";
+$sql="select * from experttalk";
 $result=$Conn->query($sql);
 
 // DELETE QUERY
@@ -75,91 +75,100 @@ $result=$Conn->query($sql);
 
 <body>
 
-    <!-- NAVBAR -->
+   <!-- NAVBAR -->
 
-    <nav class="navbar  navbar-expand-lg navbar-dark ">
-        <div class="container-fluid">
-            <a class="navbar-brand fs-4" href="#">
-                <img src="img/logo.jpeg" width="80" height="80" alt="">
-                Computonics Club
-            </a>
-            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header text-white border-bottom">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Computonics</h5>
-                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link " aria-current="page" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                About Us <i class="fa-solid fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="about.html">Club Overview</a></li>
-                                <li><a class="dropdown-item" href="team.html">Meet The Team</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Event<i class="fa-solid fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="event celender.html">Event Calender</a></li>
-                                <li><a class="dropdown-item" href="past event.html">Past Event</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Result<i class="fa-solid fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="result.php">Result</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="login.php">Result Update</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="gallery.html">Gallery</a>
-                        </li>
+  <section>
+        <nav class="navbar  navbar-expand-lg navbar-dark ">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-4" href="#">
+                    <img src="img/logo.jpeg" width="80" height="80" alt="">
+                    Computonics Club
+                </a>
+                <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- slidebar -->
+                <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header text-white border-bottom">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Computonics</h5>
+                        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 ">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    About Us <i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="about.html">Club Overview</a></li>
+                                    <li><a class="dropdown-item" href="team.html">Meet The Team</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active " href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Event<i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="event celender.html">Event Calender</a></li>
+                                    <li><a class="dropdown-item" href="past event.html">Past Event</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Participants Data<i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="participantupdate.php">Data Update</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="participantsdata.php">Participants Data</a>
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                           
+                           
+                            <li class="nav-item mx-2">
+                                <a class="nav-link " href="gallery.html">Gallery</a>
+                            </li>
+                           
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false ">
+                                    Join Us<i class="fa-solid fa-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="member benifit.html">Member Benifits</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link" href="contactus.php">Contact Us</a>
+                            </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Join Us<i class="fa-solid fa-caret-down"></i>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="member benifit.html">Member Benifits</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="contactus.php">Contact Us</a>
-                        </li>
-
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-    <div class="clear"></div>
+        </nav>
+        <div class="clear"></div>
+    </section>
+
 
 
       <!-- SECTION2  -->
 
   <section class="section2">
     <div class="backgroundimg">
-      <h2>Result</h2>
+      <h2>Participants Data</h2>
     </div>
     <div class="clear"></div>
   </section>
@@ -212,7 +221,7 @@ $result=$Conn->query($sql);
                     </td>
                     <td>
                         <?php  
-                        echo $row['departmentname']
+                        echo $row['department']
                         ?>
                     </td>
                     <td>
@@ -222,7 +231,7 @@ $result=$Conn->query($sql);
                     </td>
                     <td>
                         <?php  
-                        echo $row['eventname']
+                        echo $row['event']
                         ?>
                     </td>
                     <td>
@@ -232,7 +241,7 @@ $result=$Conn->query($sql);
                     </td>
 
                     <td>
-                        <a href="result.php?id=
+                        <a href="participantsdata.php?id=
                         <?php 
                         echo $row['id']
                          ?>"class="button">Delete</a>
